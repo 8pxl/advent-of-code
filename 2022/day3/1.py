@@ -5,7 +5,6 @@ for line in inp:
     mid = int(len(line.strip())/2)
     first = ''.join(set((line[:mid])))
     last = ''.join(set((line[mid:])))
-
     for char in first:
         if char in last:
             uni = ord(char)

@@ -6,7 +6,6 @@ triples = [lines[i:i+3] for i in range(0,len(lines),3)]
 for triple in triples:
     for char in triple[0]:
         if char in triple[1] and char in triple[2]:
-            print(char)
             uni = ord(char)
             if uni <= 90:
                 uni -= 38
