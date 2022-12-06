@@ -1,4 +1,3 @@
-#pt.1
 inp = open("input")
 
 mvs = {
@@ -29,7 +28,3 @@ for line in inp:
     score += result * 3 + (4 - m2)
 
 print(score)
-
-#pt.2 (why is it so diff oml)
-
-inp = open("input")
