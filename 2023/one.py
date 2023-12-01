@@ -4,4 +4,4 @@ sum = 0;
 for line in input:
     _ = [0 for w,d in pairs if (line := line.replace(w,d))]
     l = [int(char) for char in line.rstrip() if ord(char) < 58]
-    print(sum := (l[0]*10 + l[-1]))
+    print(sum := sum + (l[0]*10 + l[-1]))
