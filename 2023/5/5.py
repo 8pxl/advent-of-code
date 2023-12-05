@@ -1,12 +1,10 @@
 import math
-
 def get(num, ranges):
     for range in ranges:
         c = num - range[1]
         if (0 <= c <= range[2]):
             return range[0] + c
-    return(num)
-        
+    return(num) 
 f = open("5/5.in")
 seeds = tuple(map(int,f.readline().split()[1:]))
 maps = []
@@ -20,8 +18,7 @@ for line in f:
     if(line[-1] == ':'):
         i += 1
         continue
-    tup = tuple(map(int,line.split()))
-    maps[i].append(tup)
+    maps[i].append(tuple(map(int,line.split())))
 low = math.inf
 for seed in seeds:
     num = seed
