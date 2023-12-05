@@ -1,20 +1,4 @@
-# class smap():
-#     ranges = []
-#     def __init__(self):
-#         pass
-
-#     def append(self, range):
-#         self.ranges.append(range)
-
-#     def check(self, num):
-#         for range in self.ranges:
-#             c = num - range[1]
-#             if (c < range[2]):
-#                 return range[0] + c
-#         return num
-
 import math
-
 
 def get(num, ranges):
     for range in ranges:
@@ -38,7 +22,6 @@ for line in f:
         continue
     tup = tuple(map(int,line.split()))
     maps[i].append(tup)
-print(maps)
 low = math.inf
 for seed in seeds:
     num = seed
