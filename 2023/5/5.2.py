@@ -5,6 +5,15 @@ def get(num, ranges):
             return range[1] + c
     return(num)
     
+def check(n, seeds):
+    num = n
+    for i in range(7):
+            num = get(num, maps[6-i])
+    for i in range(int(len(seeds) / 2)):
+        if (seeds[2*i] <= num <= seeds[2*i] + seeds[2*i + 1]):
+            return True
+    return False
+
 f = open("5/5.in")
 seeds = tuple(map(int,f.readline().split()[1:]))
 maps = []
@@ -18,17 +27,7 @@ for line in f:
     if(line[-1] == ':'):
         i += 1
         continue
-    tup = tuple(map(int,line.split()))
-    maps[i].append(tup)
-
-def check(n, seeds):
-    num = n
-    for i in range(7):
-            num = get(num, maps[6-i])
-    for i in range(int(len(seeds) / 2)):
-        if (seeds[2*i] <= num <= seeds[2*i] + seeds[2*i + 1]):
-            return True
-    return False
+    maps[i].append(tuple(map(int,line.split())))
 
 lo = 0
 hi = 1000000000
