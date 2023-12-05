@@ -26,5 +26,3 @@ for line in open("2/2.in"):
         power *= prgb[i]
     sum += power
 print(sum)
-                
-            
