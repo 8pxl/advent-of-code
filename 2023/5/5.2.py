@@ -1,3 +1,5 @@
+import time
+start_time = time.time()
 def get(num, ranges):
     for range in ranges:
         c = num - range[0]
@@ -16,9 +18,7 @@ def check(n, seeds):
 
 f = open("5/5.in")
 seeds = tuple(map(int,f.readline().split()[1:]))
-maps = []
-for i in range(7):
-    maps.append([])
+maps = [[] for _ in range(7)]
 i = -1
 for line in f:
     line = line.rstrip()
@@ -28,13 +28,14 @@ for line in f:
         i += 1
         continue
     maps[i].append(tuple(map(int,line.split())))
-
 lo = 0
 hi = 1000000000
+# print(i)
 while lo < hi:
     mid = int(lo + (hi-lo)/2)
     if (check(mid, seeds)):
         hi = mid
     else:
         lo = mid+1
-print(mid)
+print("--- %s seconds ---" % (time.time() - start_time))
+print(mid)  
