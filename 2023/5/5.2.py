@@ -30,7 +30,6 @@ for line in f:
     maps[i].append(tuple(map(int,line.split())))
 lo = 0
 hi = 1000000000
-# print(i)
 while lo < hi:
     mid = int(lo + (hi-lo)/2)
     if (check(mid, seeds)):
@@ -39,3 +38,4 @@ while lo < hi:
         lo = mid+1
 print("--- %s seconds ---" % (time.time() - start_time))
 print(mid)  
+
