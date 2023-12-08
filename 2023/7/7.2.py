@@ -25,7 +25,10 @@ def strength(card):
     print(j)
     print(temp)
     #01 45
-    first = temp[-1] + j
+    try:
+        first = temp[-1] + j
+    except:
+        first = 5
     try:
         second = temp[-2]
     except:
@@ -56,7 +59,7 @@ def cmp(item1, item2):
                 return -1
     return True
 
-# arr.sort(key=functools.cmp_to_key(cmp))
+arr.sort(key=functools.cmp_to_key(cmp))
 
 # print(arr)
 ans = 0
@@ -67,7 +70,7 @@ for i in range(len(arr)):
 # for k in arr:
 #     k = strength(k)
 #     print(k[0], [cards[z] for z in k[1]])
-# print(ans)
+print(ans)
 
 # for i, k in enumerate(cmp1.c1.keys()):
 #     if(k != arr[i][0]):
