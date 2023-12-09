@@ -8,5 +8,4 @@ for line in open('9/9.in'):
     diff = 0
     for i in range(len(arr)-1, -1, -1):
         diff = arr[i][-1] + diff
-    total += diff
-    print(total)
+    print(total := total+diff)
