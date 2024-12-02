@@ -9,6 +9,5 @@ def check(nums):
 count = 0
 for line in f.readlines():
     nums = tuple(map(int, line.split()))
-    safe = sum([check(nums[:i] + nums[i+1:]) for i in range(len(nums))]) > 0
-    count += safe
+    count += sum([check(nums[:i] + nums[i+1:]) for i in range(len(nums))]) > 0
 print(count)
