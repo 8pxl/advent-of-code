@@ -1,4 +1,6 @@
+import time
 import functools
+start_time = time.time()
 dict = {}
 sum = 0
 
@@ -40,3 +42,4 @@ for l in open("5/5.in").readlines():
             l = sorted(l, key=functools.cmp_to_key(make_comparator(cmp)))
             sum += l[len(l)//2]
 print(sum)
+print("--- %s seconds ---" % (time.time() - start_time))
