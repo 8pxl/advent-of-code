@@ -27,6 +27,5 @@ count = 0
 for k in a.a:
     print(count)
     if (checkLoop(pos, dir, int(k.imag),int(k.real))):
-        count += 1# print(checkLoop(6, 3))
+        count += 1
 print(count)
-#4710 low

@@ -1,24 +1,11 @@
-board = []
-pos = 0 + 0j
-dir = -1j
-i = 0
-for line in open("6/6.in").readlines():
-    if '^' in line:
-        pos = complex(line.index('^'), i)
-    board.append(list(line.rstrip()))
-    i += 1
-vis = [pos]
-while True:
-    next = pos + dir
-    if not ((0 <= next.real < len(board[0])) and (0 <= next.imag < len(board))):
-        break
+board, pos, dir = [], 0+0j, -1j
+for i, line in enumerate(open("6/6.in")):
+    if '^' in line: pos = complex(line.index('^'), i)
+    board.append(line.rstrip())
+vis = {pos}
+while 0 <= (next := pos + dir).real < len(board[0]) and 0 <= next.imag < len(board):
     while board[int(next.imag)][int(next.real)] == '#':
-        dir *= 1j 
+        dir *= 1j
         next = pos + dir
-    pos = next
-    if pos not in vis:
-        vis.append(pos)
-    print(pos)
-print(vis)
+    vis.add(pos := next)
 print(len(vis))
-#4710 low
