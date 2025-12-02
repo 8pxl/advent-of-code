@@ -1,25 +1,14 @@
 f = open("1.in")
-count = 0
-index = 50
+count, index = 0, 50
 for line in f.readlines():
-    print("------------")
-    sign = 1 if line[0] == "R"  else -1
-
+    sign = 1 if line[0] == "R" else -1
+    #get distance until next 0
     t = 100 if sign > 0 else 0
-    if index == 0:
-        dist = 100
-    else:
-        dist = t - (sign * index)
+    dist = 100 if index == 0 else t - (sign * index)
     old = index
-
-    num = sign * int(line[1:])
-    raw = index+num
-    index = raw % 100
-    print(num, dist)
-    if (abs(num) >= dist):
-        count += 1 + ((abs(num)-dist) // 100)
-        print("adding ", (1 if (old!=0) else 0) + ((abs(num)-dist) // 100))
-    print(index, line.rstrip())
+    #if the step size is greater than the distance to the next 0, then we can increment our count
+    step = sign * int(line[1:])
+    index = (index + step) % 100
+    if (abs(step) >=dist):
+        count += 1 + ((abs(step)-dist) // 100)
 print(count)
-
-input_file = "1.in"
