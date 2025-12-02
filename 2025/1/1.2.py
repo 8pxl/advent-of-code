@@ -1,6 +1,5 @@
-f = open("1.in")
 count, index = 0, 50
-for line in f.readlines():
+for line in open("1.in").readlines():
     sign = 1 if line[0] == "R" else -1
     #get distance until next 0
     t = 100 if sign > 0 else 0
